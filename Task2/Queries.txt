@@ -9,7 +9,7 @@ having sum(Population) > 400;
 
 Select Country.name
 from Country
-where Country.CountryID NOT IN
+where Country.CountryID not in
     (Select distinct City.CountryID
      from City
-     inner join Building on City.CityID = Building.CityID);
+     join Building on City.CityID = Building.CityID);
