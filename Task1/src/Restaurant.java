@@ -15,9 +15,10 @@ public class Restaurant {
     private static ArrayList<Dessert> availableDesserts;
     private static ArrayList<Additive> availableAdditives;
     private static ArrayList<Drink> availableDrinks;
+
     /* Very simple version of Restaurant.
-     I assume customer wants to order only one meal, dessert and drink,
-      and I assume that customer would choose food properly
+     I assume that customer wants to order only one meal, dessert and drink,
+      and I also assume that customer would choose food properly
       (There is no invalid input checking) */
 
     public static void main(String[] args) {
@@ -27,7 +28,6 @@ public class Restaurant {
         availableDrinks = Generator.generateDrinks();
 
         Order order = new Order();
-
 
         orderMeal(order);
         orderDessert(order);
@@ -53,6 +53,7 @@ public class Restaurant {
         System.out.println("Which meal do you want: ");
         filteredMeals.forEach(v -> System.out.println(filteredMeals.indexOf(v) + " : " + v));
         Meal meal = filteredMeals.get(scanner.nextInt());
+
         order.addFood(meal);
     }
 
@@ -69,6 +70,7 @@ public class Restaurant {
         System.out.println("Which drink do you want: ");
         availableDrinks.forEach(v -> System.out.println(availableDrinks.indexOf(v) + " : " + v));
         Drink drink = availableDrinks.get(scanner.nextInt());
+
         System.out.println("Do you want any additions: \n\t 0 : No \n\t 1 : Yes");
         if(scanner.nextInt() > 0) {
             System.out.println("Which addition do you want: ");
